@@ -90,7 +90,7 @@ bool montyHallGame(bool switchGuess)
     */
 
     // create variables to conduct game and store results
-    bool doors[3], correctGuess; 
+    bool doors[3], correctGuess = false; 
     int guess, sheepDoor1, car;
 
     // set one random door in the array to be the car
@@ -118,7 +118,11 @@ bool montyHallGame(bool switchGuess)
             // switch to door that isn't revealed
             // and isn't current guess
             if ((i!=guess) & (i!=sheepDoor1))
+            {
                 guess = i;
+                break;
+            }
+
         }
     }
 
